@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>ShopLite · 商城H5示例</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">ShopLite</div>
+    <div class="spacer"></div>
+    <button id="btnCart" class="icon-btn" aria-label="购物车">
+      🛒 <span id="cartCount" class="badge">0</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h1>精选商品</h1>
+      <p class="muted">移动端友好的 H5 商城示例：支持加入购物车、数量修改与结算。</p>
+    </section>
+
+    <section id="productGrid" class="grid"></section>
+  </main>
+
+  <!-- 购物车抽屉 -->
+  <div id="cartDrawer" class="drawer">
+    <div class="drawer-head">
+      <strong>购物车</strong>
+      <button id="btnCloseCart" class="icon-btn" aria-label="关闭">✖</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="total">合计：¥ <span id="cartTotal">0.00</span></div>
+      <button id="btnCheckout" class="primary">去结算</button>
+    </div>
+  </div>
+
+  <!-- 结算面板 -->
+  <div id="checkoutPanel" class="sheet">
+    <div class="sheet-head">
+      <strong>结算信息</strong>
+      <button id="btnCloseCheckout" class="icon-btn" aria-label="关闭">✖</button>
+    </div>
+    <form id="checkoutForm" class="form">
+      <label>收货人<input id="buyerName" type="text" placeholder="您的姓名" required></label>
+      <label>联系电话<input id="buyerPhone" type="tel" placeholder="手机号" required></label>
+      <label>收货地址<textarea id="buyerAddr" placeholder="省市区/街道/门牌" required></textarea></label>
+      <div class="order-summary">
+        <div>商品数量：<span id="sumQty">0</span></div>
+        <div>应付金额：¥ <span id="sumAmt">0.00</span></div>
+      </div>
+      <button class="primary" type="submit">提交订单</button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="muted">本示例为纯前端静态站点，可直接部署到 GitHub Pages。</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+
